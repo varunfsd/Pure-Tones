@@ -4,7 +4,7 @@ Pure Tones Saloon is a responsive web application for booking salon services and
 
 ## 🌐 Live Website
 
-Visit the live site: [Pure Tones Saloon](puretones.kesug.com)  
+Visit the live site: [Pure Tones Saloon](https://puretones.kesug.com/)  
 
 ## ✨ Features
 
