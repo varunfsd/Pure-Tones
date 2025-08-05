@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pricing Plans</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/pricing.css">
+  <script src="../js/app.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navigation-bar">
+            <div class="navigation-left">
+              <img src="../images/ChatGPT Image May 16, 2025, 10_51_37 AM.png" alt="Naturals Logo" />
+            </div>
+            <div class="navigation-bar-right">
+              <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ourservices.html">Our Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+            </div>
+          </nav>
+    </header>
+    <main>
+  <section class="pricing-section">
+    <h1 class="section-title">Our Pricing Plans</h1>
+    <div class="pricing-container">
+      <div class="pricing-card" data-plan="Bots">
+        <div class="badge">Basic</div>
+        <h2>Bots</h2>
+        <p class="price">$19 <span class="period">/ month</span></p>
+        <ul class="features-list">
+          <li>Automated chat support</li>
+          <li>Basic analytics</li>
+          <li>Up to 1000 interactions</li>
+          <li>Email support</li>
+        </ul>
+        <button class="select-btn">Select Plan</button>
+      </div>
+      <div class="pricing-card popular" data-plan="Men's">
+        <div class="badge">Most Popular</div>
+        <h2>Men's</h2>
+        <p class="price">$49 <span class="period">/ month</span></p>
+        <ul class="features-list">
+          <li>Personal grooming services</li>
+          <li>Exclusive product discounts</li>
+          <li>Priority booking</li>
+          <li>24/7 Support</li>
+        </ul>
+        <button class="select-btn">Select Plan</button>
+      </div>
+      <div class="pricing-card" data-plan="Women's">
+        <div class="badge">Premium</div>
+        <h2>Women's</h2>
+        <p class="price">$59 <span class="period">/ month</span></p>
+        <ul class="features-list">
+          <li>Personal beauty services</li>
+          <li>Exclusive makeup offers</li>
+          <li>Priority booking</li>
+          <li>24/7 Support</li>
+        </ul>
+        <button class="select-btn">Select Plan</button>
+      </div>
+    </div>
+    <div id="selected-plan" class="selected-plan-msg"></div>
+  </section>
+</main>
+  <footer>
+    <p>Contact us: <a href="mailto:info@yourwebsite.com">info@yourwebsite.com</a> | Phone: +123 456 7890</p>
+    <p>&copy; 2025 Your Company Name</p>
+  </footer>
+
+  <script src="pricing.js"></script>
+</body>
+</html>

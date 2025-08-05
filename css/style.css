@@ -1,0 +1,723 @@
+/* ---------- TYPOGRAPHY ----------
+FONT SIZES: 12px / 14px / 16px / 20px / 24px / 30px / 36px / 44px / 52px / 62px / 74px / 86px / 98px
+FONT WEIGHTS: 400 / 500 / 600 / 700
+LINE HEIGHTS: 1 / 1.1 / 1.2
+LETTER SPACING: -0.5px / 0.75px
+FONT FAMILY: Poppins, sans-serif
+*/
+
+/* ----- Global Reset ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  
+}
+
+html {
+  font-size: 62.5%;
+}
+/* ----- Hero Section ----- */
+
+.hero-section {
+  height: 100vh;
+  background-image: url('../images/ban_1%20(1).png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+/* ----- Navigation ----- */
+.navigation-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 4rem;
+  max-height:140px;
+}
+
+.navigation-left {
+  width:50%;
+  display: flex;
+  padding-left:40px;
+}
+.navigation-left img {
+  width:25rem;
+}
+.navigation-bar-right{
+  width:50%;
+  display: flex;
+  justify-content:center;
+}
+.nav-links {
+  display: flex;
+  gap: 4rem;
+  font-size: 1.4rem;
+  color: white;
+}
+.nav-links a {
+  color: white;
+}
+.nav-links li {
+  opacity: 0.65;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-links li:hover {
+  opacity: 1;
+  transform: scale(1.25);
+}
+
+/* ----- Call-to-Action Buttons ----- */
+
+.action-book-appointment-container {
+  position: absolute;
+  bottom: 70px;
+  left: 160px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.book-appointment {
+  font-size: 1.6rem;
+  border: 0.66px solid white;
+  color: #7E4798;
+  background-color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.book-service {
+  font-size: 1.6rem;
+  border: 0.66px solid white;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.book-appointment::before,
+.book-service::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background: transparent;
+  box-shadow: 0 0 15px 3px rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.book-appointment:hover::before,
+.book-service:hover::before {
+  opacity: 1;
+}
+
+/* ----- WhatsApp & Appointment Button ----- */
+
+.whatsapp-logo {
+  width: 50px;
+  position: fixed;
+  bottom: 70px;
+  right: 50px;
+  z-index: 1000;
+}
+
+.book-your-appointment-container {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  position: fixed;
+  bottom: 125px;
+  right: 50px;
+  z-index: 1000;
+}
+
+.book-your-appointment {
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 0.8rem 1.6rem;
+  border: 0.6px solid rgb(54, 54, 54);
+  border-radius: 24px;
+  color: rgb(32, 32, 32);
+  box-shadow: 3px 3px 1px rgb(0, 231, 133);
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.cancel-cross {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+/* ----- Chat Widget ----- */
+
+.chat-widget {
+  width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  background: white;
+  position: fixed;
+  bottom: 120px;
+  right: 80px;
+  overflow: hidden;
+  border: 4px solid #25d366;
+  font-family: "Poppins", sans-serif;
+  z-index: 9999;
+  display: none;
+}
+
+.chat-header {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.chat-body {
+  padding: 0 1.5rem 1rem;
+  text-align: left;
+}
+
+.chat-greeting {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.chat-button {
+  display: flex;
+  align-items: center;
+  background: #111;
+  color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 1.3rem;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.chat-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.arrow {
+  margin-left: auto;
+}
+
+.powered {
+  font-size: 1.1rem;
+  margin-top: 0.8rem;
+  color: #777;
+}
+
+/* ----- Why Choose Us Section ----- */
+
+.why-choose-us-section {
+  background: linear-gradient(to right, #4a1d50, #793087, #a044c3);
+  padding-top: 50px;
+}
+
+.why-choose-us-container {
+  padding: 2rem 6rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+  border-top-left-radius: 70px;
+  border-top-right-radius: 70px;
+  overflow: hidden;
+}
+.why-choose-us-container-left {
+  width: 50%;
+  padding: 5px;
+}
+
+.why-choose-us-container-right {
+  width: 50%;
+  padding: 30px;
+}
+
+.why-choose-us-container-right span {
+  font-size: 4rem;
+  font-family: 'Forum', sans-serif;
+  font-weight: 200;
+  color: #7E4798;
+}
+
+.why-choose-us-container-right p {
+  font-size: 1.6rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  color: #7E4798;
+  line-height: 25px;
+}
+
+/* Animation Keyframes */
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Initial state - invisible, no animation */
+
+.why-choose-us-container-left,
+.why-choose-us-container-right {
+  opacity: 0;
+}
+
+/* Animate when classes are added */
+
+.animate-left {
+  animation: slideInLeft 2s ease forwards;
+}
+
+.animate-right {
+  animation: slideInRight 2s ease forwards;
+}
+
+/* Our Services Section */
+
+.our-services-section {
+  background: linear-gradient(to left, #4a1d50, #793087, #a044c3);
+}
+
+.our-services-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 8rem;
+  overflow: hidden;
+}
+
+.our-services-container-left {
+  width: 50%;
+}
+
+.our-services-container-right {
+  height: 400px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+#service-image {
+  width: fit-content;
+}
+
+.our-services-container-left span {
+  font-size: 4.4rem;
+  font-weight: 100;
+  font-family: 'forum', sans-serif;
+  color: white;
+  padding: 10px 20px;
+  padding-left: 0;
+  margin-bottom: 4rem;
+}
+
+.our-services-container-left div {
+  padding: 4px 8px;
+  background-color: white;
+  color: #7E4798;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 5px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.our-services-container-left div:hover {
+  box-shadow: 0 0 10px white;
+  transition: box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+.our-services-container-left ul {
+  display: flex;
+}
+
+.our-services-container-left ul:first-of-type li,
+.our-services-container-left ul:nth-of-type(2) li {
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+/* Gender Tabs (Men/Women) */
+.our-services-container-left ul:first-of-type li {
+  font-size: 2.5rem;
+  font-weight: 100;
+  font-family: 'forum', sans-serif;
+  color: white;
+  padding: 10px 20px;
+  padding-left: 0;
+  opacity: 0.5;
+}
+
+.our-services-container-left ul:first-of-type li:hover {
+  text-shadow: 0 0 10px white;
+  opacity: 1;
+}
+
+/* Service Tabs (Hair, Skin...) */
+.our-services-container-left ul:nth-of-type(2) li {
+  font-size: 1.5rem;
+  font-family: 'poppins', sans-serif;
+  color: white;
+  padding: 10px 20px;
+  padding-left: 0;
+  opacity: 0.5;
+}
+
+.our-services-container-left ul:nth-of-type(2) li:hover {
+  text-shadow: 0 0 10px white;
+  opacity: 1;
+}
+
+/* Active tab styles (for both gender and service tabs) */
+.our-services-container-left ul li.active {
+  opacity: 1 !important;
+}
+
+/* Description text */
+.our-services-container-left p {
+  font-size: 1.6rem;
+  font-family: 'poppins', sans-serif;
+  color: white;
+  margin-top: 2rem;
+  line-height: 25px;
+  min-height: 100px;
+}
+
+/* Fade transition classes */
+.fade-image,
+.fade-text {
+  transition: opacity 0.5s ease;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+/* -----Exclusive Bridal Section----- */
+
+.exclusive-bridal-section {
+  background-image: url('../images/bridal_img_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.exclusive-bridal-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding-left:8rem;
+  padding-top:4rem;
+  overflow: hidden;
+}
+
+.exclusive-bridal-container-left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+.exclusive-bridal-container-right {
+  width: 50%;
+  text-align: center;
+  padding-left:3rem;
+}
+
+.exclusive-bridal-container-right img {
+  max-height: 450px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.exclusive-bridal-container-left span {
+  font-size: 4rem;
+  font-weight: 300;
+  font-family: 'forum', sans-serif;
+  color: rgb(126, 71, 152);
+  padding-bottom: 30px;
+}
+
+.exclusive-bridal-container-left p {
+  font-size: 1.6rem;
+  font-family: 'poppins', sans-serif;
+  color: rgb(126, 71, 152);
+  line-height: 1.6;
+  min-height: 100px;
+  padding-bottom: 15px;
+}
+
+.exclusive-bridal-container-left div {
+  padding: 10px 20px;
+  background-color: rgb(126, 71, 152);
+  display: inline-block;
+  color: white;
+  font-family: 'poppins', sans-serif;
+  font-size: 14px;
+  border-radius: 5px;
+  font-weight: 600;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.exclusive-bridal-container-left div:hover {
+  box-shadow: 0 0 10px black;
+  transition: box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animation base */
+
+.animate-left {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.8s ease;
+}
+
+.animate-right {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.8s ease;
+}
+
+/* Initial hidden state */
+
+.exclusive-bridal-container-left,
+.exclusive-bridal-container-right {
+  opacity: 0;
+}
+
+.exclusive-bridal-container-left {
+  transform: translateX(-100px);
+}
+
+.exclusive-bridal-container-right {
+  transform: translateX(100px);
+}
+
+/* <----- Rating Reviews Section -----> */
+.rating-reviews-section {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #86519f, #a46dbd);
+  margin: 0;
+  padding:25px;
+  overflow-x: hidden;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+}
+.rating-reviews-section h1{
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 100;
+  color: #7E4798;
+  font-family: 'forum', sans-serif;
+  color:white;
+}
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  background: #ffffff;
+  padding: 60px 40px;
+  border-radius: 10px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.container {
+  width: 340px;
+  height: 430px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background-color: #fefefe;
+  position: relative;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
+}
+
+.container:hover .slider-track {
+  animation-play-state: paused;
+}
+
+.slider-track {
+  display: flex;
+  flex-direction: column;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.container1 .slider-track,
+.container3 .slider-track {
+  animation: scroll-up 10s linear infinite;
+}
+
+.container2 .slider-track {
+  animation: scroll-down 10s linear infinite;
+}
+
+@keyframes scroll-up {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes scroll-down {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
+.review-card {
+  flex: 0 0 auto;
+  background: #fff;
+  padding: 24px 20px;
+  margin: 14px;
+  border-radius: 10px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
+  text-align: left;
+  position: relative;
+}
+
+.review-card:hover {
+  background: linear-gradient(135deg, #8a49b1, #a66fc6);
+  color: #fff;
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.review-card:hover h5,
+.review-card:hover span,
+.review-card:hover .stars {
+  color: #fff;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.review-header .profile-icon {
+  font-size: 20px;
+  opacity: 0.7;
+}
+
+.stars {
+  font-size: 18px;
+  color: #f4b400;
+}
+
+.review-card h5 {
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #444;
+  margin-bottom: 14px;
+}
+
+.review-card span {
+  font-weight: 600;
+  font-size: 14px;
+  color: #666;
+  display: block;
+  margin-top: 10px;
+}
+
+/* ----- Responsive Breakpoints ----- */
+
+@media (max-width: 1200px) {}
+
+@media (max-width: 992px) {}
+
+@media (max-width: 768px) {}
+
+@media (max-width: 576px) {}
+.footer {
+  background-color: #5b2a6c;
+  color: white;
+  padding: 40px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  font-size: 12px;
+  margin:0 100px;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 220px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap:3px;
+}
+.footer-column h3 {
+  margin-bottom: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.social-icons{
+  margin-top:10px;
+}
+.social-icons span {
+  font-size: 24px;
+}

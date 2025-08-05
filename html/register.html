@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/register.css">
+    <script src="https://unpkg.com/lottie-web@5.12.0/build/player/lottie.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class="navigation-bar">
+            <div class="navigation-left">
+              <img src="../images/ChatGPT Image May 16, 2025, 10_51_37 AM.png" alt="Naturals Logo" />
+            </div>
+            <div class="navigation-bar-right">
+              <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ourservices.html">Our Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <section class="register-section">
+            <div class="register-container">
+                <div class="register-left-container">
+                    <form class="register-form" id="register-form" method="post" action="../php/register.php">
+                      <div class="form-top">
+                        <h2 class="red">Create Your Account</h2>
+                        <p>Register with Naturals Salon and enjoy exclusive beauty services.</p>
+                      </div>
+                  
+                      <label for="name">Full Name <span class="required">*</span></label>
+                      <input type="text" id="name" name="name" required>
+                  
+                      <label for="phone">Phone Number <span class="required">*</span></label>
+                      <div class="phone-group">
+                        <select name="country_code">
+                          <option selected>🇮🇳 +91</option>
+                        </select>
+                        <input type="tel" id="phone" name="phone" required>
+                      </div>
+                  
+                      <label for="email">Email <span class="required">*</span></label>
+                      <input type="email" id="email" name="email" required>
+                  
+                      <label for="password">Password <span class="required">*</span></label>
+                      <input type="password" id="password" name="password" required>
+                  
+                      <label for="confirm-password">Confirm Password <span class="required">*</span></label>
+                      <input type="password" id="confirm-password" name="confirm_password" required>
+                  
+                      <label for="gender">Gender <span class="required">*</span></label>
+                      <select id="gender" name="gender" required>
+                        <option value="">-Select-</option>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Other">Other</option>
+                      </select>
+                  
+                      <label for="dob">Date of Birth</label>
+                      <input type="date" id="dob" name="dob">
+                  
+                      <label for="city">City / Area <span class="required">*</span></label>
+                      <input type="text" id="city" name="city" required>
+                  
+                      <label class="checkbox-label">
+                        <input type="checkbox" name="terms" required checked>
+                        <span>
+                          I agree to the terms and conditions and consent to receive service-related updates via SMS or email.
+                        </span>
+                      </label>
+                  
+                      <button type="submit">Register</button>
+                    </form>
+                  </div>                  
+                  <div class="register-container-right">
+                    <div class="lottie-wrapper">
+                      <div id="lottie-beauty" class="lottie-player"></div>
+                      <p class="caption">Experience the Art of Beauty</p>
+                    </div>
+                  </div>                  
+            </div>
+        </section>
+        <!-- Popup Message -->
+        <div id="popup-message" class="popup-message"></div>
+    </main>
+    <script>
+       lottie.loadAnimation({
+  container: document.getElementById('lottie-beauty'), // the DOM element
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: 'https://assets5.lottiefiles.com/packages/lf20_pprxh53t.json' // your Lottie animation URL
+});
+
+function showPopup(message, type = 'error', duration = 5000) {
+  const popup = document.getElementById('popup-message');
+  popup.textContent = message;
+
+  popup.className = 'popup-message'; // Reset classes
+  popup.classList.add(type === 'success' ? 'popup-success' : 'popup-error');
+
+  popup.style.display = 'block';
+
+  setTimeout(() => {
+    popup.style.display = 'none';
+  }, duration);
+}
+
+document.getElementById('register-form').addEventListener('submit', function(e) {
+  e.preventDefault(); // prevent default form submission
+
+  const phone = document.getElementById('phone').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirm-password').value;
+  const dob = document.getElementById('dob').value;
+
+  // Phone number validation
+  if (phone.length !== 10 || !/^[6-9]/.test(phone)) {
+    showPopup('Phone number must be exactly 10 digits and start with 6, 7, 8, or 9.');
+    return;
+  }
+
+  // Email validation
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    showPopup('Please enter a valid email address.');
+    return;
+  }
+
+  // Password match validation
+  if (password !== confirmPassword) {
+    showPopup('Passwords do not match.');
+    return;
+  }
+
+  // DOB validation (not in the future)
+  if (dob) {
+    const enteredDate = new Date(dob);
+    const today = new Date();
+    if (enteredDate > today) {
+      showPopup('Date of birth cannot be in the future.');
+      return;
+    }
+  }
+
+  // If validation passed, submit form data via fetch
+
+  const formData = new FormData(this);
+
+  fetch('register.php', {
+  method: 'POST',
+  body: formData,
+})
+.then(response => response.json())
+.then(data => {
+  if (data.status === 'success') {
+    showPopup(data.message, 'success');
+    this.reset(); // Clear form after success
+
+    // Redirect to home page after 2 seconds
+    setTimeout(() => {
+      window.location.href = 'index.html'; // change path if needed
+    }, 2000);
+  } else {
+    showPopup(data.message, 'error');
+  }
+})
+.catch(error => {
+  showPopup('An error occurred. Please try again.', 'error');
+  console.error('Fetch error:', error);
+});
+});
+      </script>
+      
+</body>
+</html>

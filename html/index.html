@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naturals Salon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="../js/app.js"></script>
+</head>
+<body>
+  <header>
+   
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <nav class="navigation-bar">
+        <div class="navigation-left">
+          <img src="../images/ChatGPT Image May 16, 2025, 10_51_37 AM.png" alt="Naturals Logo" />
+        </div>
+        <div class="navigation-bar-right">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ourservices.html">Our Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="action-book-appointment-container">
+        <ul class="action-buttons">
+          <li>
+            <button class="book-appointment" onclick="window.location.href='booking.html'">Book Appointment</button>               
+          </li>
+          <li>
+            <button class="book-service" onclick="window.location.href='ourservices.html'">Book Service</button>               
+          </li>
+        </ul>
+      </div>
+      <div class="whatsapp-info-container">
+          <div class="book-your-appointment-container">
+            <span class="book-your-appointment" onclick="show()">Book Your Appointment</span>
+            <img class="cancel-cross" onclick="hide()" src="../images/326554_cancel_icon.png" alt="">
+          </div>
+          <div class="chat-widget">
+            <div class="chat-header">
+              <div class="chat-icon">
+                <img src="../images/pngwing.com.png" alt="">
+              </div>
+            </div>
+            <div class="chat-body">
+              <p class="chat-greeting">Hi there!<br>How can I help you?</p>
+              <a
+                href="https://wa.me/917569464632?text=Hey%20Varun"
+                target="_blank"
+                class="chat-button">
+                <img src="https://img.icons8.com/ios-filled/20/ffffff/whatsapp.png" />
+                Book your appointment
+                <span class="arrow">➤</span>
+              </a>
+            </div>
+            <div class="chat-tail"></div>
+            <div class="chat-toggle">✓</div>
+          </div>
+          <a class="whatsapp-logo"href="https://wa.me/917569464632?text=Hey%20Varun"><img src="../images/pngwing.com.png" alt="Whatsapp"></a> 
+        </div>
+    </section>
+    <!-- -----Why Choose Us Section----- -->
+     <section class="why-choose-us-section">
+        <div class="why-choose-us-container">
+           <div class="why-choose-us-container-left">
+              <img src="../images/academy_image.png" alt="">
+           </div>
+           <div class="why-choose-us-container-right">
+            <span>Why Choose Us?</span>
+            <p>With 25 years of experience, Naturals offers the benefit of
+              over two decades of expertise in the beauty industry. Our
+              personalized services are tailored to meet your unique needs
+              and preferences, ensuring that you receive the care and
+              attention you deserve. We are committed not to compromised
+              quality, using only the highest quality premium products to
+              provide exceptional care.</p>
+            </div>
+        </div>
+        
+      </section>
+    <!-------Our Services Section------->
+
+      <section class="our-services-section">
+        <div class="our-services-container">
+          <div class="our-services-container-left">
+            <span>Our Services</span>
+            <ul>
+              <li>Men</li>
+              <li>Women</li>
+            </ul>
+            <ul>
+              <li>Pre-Wedding & Bridal</li>
+              <li>Body</li>
+              <li>Skin</li>
+              <li>Hair</li>
+            </ul>
+              <p>
+                Naturals offers exclusive wedding grooming services for grooms,
+                including tailored haircuts, skin treatments, facials, body polishing,
+                and relaxing massages.
+              </p>
+              <div><a href="booking.html">BookNow</a></div>
+          </div>
+          <div class="our-services-container-right">
+              <img id="service-image"src="../images/services_men.png" alt="">
+          </div>
+        </div>
+      </section>
+
+        <!-- Exclusive Bridal -->
+
+      <section class="exclusive-bridal-section">
+              <div class="exclusive-bridal-container">
+                <div class="exclusive-bridal-container-left">
+                  <span>Exclusively Bridal</span>
+                  <p>
+                    
+              Make your wedding day unforgettable with our luxurious bridal
+              services. At Naturals, we rely on premium products and uphold
+              the highest hygiene standards to ensure a flawless, radiant
+              look. Trust our expert team to provide you with exceptional care
+              and beauty on your special day.
+            
+                  </p>
+                  <div><a href="booking.html">BookNow</a></div>
+                </div>
+                <div class="exclusive-bridal-container-right">
+                  <img src="../images/bridal_img.png" alt="">
+                </div>
+              </div>
+      </section>
+      
+      <!----- Rating Reviews Section ----->
+
+      <section class="rating-reviews-section">
+        <h1>What Clients Say About Us</h1>
+        <div class="main-container">
+          <!-- Container 1 -->
+           
+          <div class="container container1">
+            <div class="slider-track">
+              <div class="review-card">
+                <div class="review-header">
+                  <div class="profile-icon">👤</div>
+                  <div class="stars">⭐⭐⭐</div>
+                </div>
+                <h5>"Pure Tones gave me the best facial I’ve ever had! The ambience was serene and relaxing."</h5>
+                <span>— Anjali R.</span>
+              </div>
+              <div class="review-card">
+                <div class="review-header">
+                  <div class="profile-icon">👤</div>
+                  <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <h5>"My bridal makeup was flawless. The team made me look stunning on my big day."</h5>
+                <span>— Sneha M.</span>
+              </div>
+              <div class="review-card">
+                <div class="review-header">
+                  <div class="profile-icon">👤</div>
+                  <div class="stars">⭐⭐⭐</div>
+                </div>
+                <h5>"Pure Tones gave me the best facial I’ve ever had! The ambience was serene and relaxing."</h5>
+                <span>— Anjali R.</span>
+              </div>
+              <div class="review-card">
+                <div class="review-header">
+                  <div class="profile-icon">👤</div>
+                  <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <h5>"My bridal makeup was flawless. The team made me look stunning on my big day."</h5>
+                <span>— Sneha M.</span>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Container 2 -->
+          <div class="container container2">
+            <div class="slider-track">
+              <div class="review-card">
+                <div class="review-header">
+                  <div class="profile-icon">👤</div>
+                  <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <h5>"Stylish beard trim and facial. Professional and courteous team."</h5>
+                <span>— Rahul V.</span>
+              </div>
+              <div class="review-card">
+                <div class="review-header">
+                  <div class="profile-icon">👤</div>
+                  <div class="stars">⭐⭐⭐⭐</div>
+                </div>
+                <h5>"Hair spa was amazing and super relaxing. Definitely my favorite salon."</h5>
+                <span>— Karan S.</span>
+              </div>
+              <div class="review-card">
+                <div class="review-header">
+                  <div class="profile-icon">👤</div>
+                  <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <h5>"Stylish beard trim and facial. Professional and courteous team."</h5>
+                <span>— Rahul V.</span>
+              </div>
+              <div class="review-card">
+                <div class="review-header">
+                  <div class="profile-icon">👤</div>
+                  <div class="stars">⭐⭐⭐⭐</div>
+                </div>
+                <h5>"Hair spa was amazing and super relaxing. Definitely my favorite salon."</h5>
+                <span>— Karan S.</span>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Container 3 -->
+          <div class="container container3">
+            <div class="slider-track">
+              <div class="review-card">
+                <div class="review-header">
+                  <div class="profile-icon">👤</div>
+                  <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <h5>"Loved the personalized attention and relaxing environment."</h5>
+                <span>— Nisha S.</span>
+              </div>
+              <div class="review-card">
+                <div class="review-header">
+                  <div class="profile-icon">👤</div>
+                  <div class="stars">⭐⭐⭐⭐</div>
+                </div>
+                <h5>"Friendly staff and excellent bridal services. Made my day special."</h5>
+                <span>— Kavita L.</span>
+              </div>
+              <div class="review-card">
+                <div class="review-header">
+                  <div class="profile-icon">👤</div>
+                  <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <h5>"Loved the personalized attention and relaxing environment."</h5>
+                <span>— Nisha S.</span>
+              </div>
+              <div class="review-card">
+                <div class="review-header">
+                  <div class="profile-icon">👤</div>
+                  <div class="stars">⭐⭐⭐⭐</div>
+                </div>
+                <h5>"Friendly staff and excellent bridal services. Made my day special."</h5>
+                <span>— Kavita L.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <p>Home</p>
+        <p>About Us</p>
+        <p>Contact Us</p>
+        <p>Franchise Opportunities</p>
+        <p>Blogs</p>
+        <p>Privacy Policy</p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Our Services</h3>
+        <p>Hair Care</p>
+        <p>Skin Care</p>
+        <p>Body Care</p>
+        <p>Events</p>
+        <p>Locate us</p>
+        <p>Contact Us</p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <p>📍 Groom India Salon & Spa Pvt. Ltd</p>
+        <p>No. 123 & 124, 3rd Floor, Ispahani Centre,<br>
+        Nungambakkam High Rd,<br>
+        Thousand Lights, Chennai,<br>
+        Tamil Nadu 600034</p>
+        <p>🏬 Store Locator</p>
+        <p>Naturals Salon Locator</p>
+        <p>Naturals Signature Salon Locator</p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Get in Touch</h3>
+        <p>📞 +91 90926 26262</p>
+        <p>✉️ care@naturals.in</p>
+        <div class="social-icons">
+          <h3>Our Socials</h3>
+          <span>📸</span>
+          <span>📘</span>
+          <span>❌</span>
+          <span>💼</span>
+          <span>▶️</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+</body>
+</html>

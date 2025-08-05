@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Appointment | Salon</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/booking.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Navigation -->
+          <nav class="navigation-bar">
+              <div class="navigation-left">
+                <img src="../images/ChatGPT Image May 16, 2025, 10_51_37 AM.png" alt="Naturals Logo" />
+              </div>
+              <div class="navigation-bar-right">
+                <ul class="nav-links">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="ourservices.html">Our Services</a></li>
+                  <li><a href="pricing.html">Pricing</a></li>
+                  <li><a href="register.html">Register</a></li>
+                  <li><a href="login.html">Login</a></li>
+                  <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+              </div>
+            </nav>
+      </header>
+      <main>
+
+        
+
+        <section class="appointment-section">
+            <div class="booking-appointment-container">
+              
+              <!-- Appointment -->
+
+                <div class="booking-appointment-left">
+                <h2>Book an Appointment</h2>
+                <form class="contact-form" id="form" action="../php/booking.php" method="post">
+                    <div class="form-top">
+                      <h2>We’d Love To Serve You</h2>
+                      <p>Book your appointment at any Pure Tones Salon across India by filling out the form below</p>
+                    </div>
+                
+                    <label for="name">Name <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required />
+                
+                    <label for="phone">Phone Number <span class="required">*</span></label>
+                    <div class="phone-group">
+                      <select name="country_code" aria-label="Country code">
+                        <option selected>🇮🇳 +91</option>
+                      </select>
+                      <input type="tel" id="phone" name="phone" required />
+                    </div>
+                
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" />
+                
+                    <label for="service">Select Service <span class="required">*</span></label>
+                    <select id="service" name="service" required>
+                      <option value="">Choose a Service</option>
+                      <option>Haircut</option>
+                      <option>Facial</option>
+                      <option>Bridal Makeup</option>
+                      <option>Hair Coloring</option>
+                      <option>Massage</option>
+                    </select>
+                
+                    <label for="stylist">Preferred Stylist</label>
+                    <select id="stylist" name="stylist">
+                      <option value="">Any Stylist</option>
+                      <option>Divya</option>
+                      <option>Priya</option>
+                      <option>Kavitha</option>
+                    </select>
+                
+                    <label for="date">Appointment Date <span class="required">*</span></label>
+                    <input type="date" id="date" name="date" required />
+                
+                    <label for="time">Time <span class="required">*</span></label>
+                    <input type="time" id="time" name="time" required />
+                
+                    <label for="message">Additional Notes</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="4"
+                      placeholder="Any preferences or notes..."
+                    ></textarea>
+                
+                    <label class="checkbox-label">
+                      <input type="checkbox" name="terms" required checked />
+                      <span>
+                        I grant authorization to Groom India Salon &amp; Spa Pvt. Ltd. to contact me concerning my inquiry.
+                        By submitting, I confirm I have read and accepted all terms &amp; conditions
+                        and consent to receive marketing campaigns via SMS, WhatsApp, and RCS.
+                      </span>
+                    </label>
+                    <button type="submit">Book Appointment</button>
+                  </form>
+                </div>
+
+                <!-- Embedded Video -->
+
+                  <div class="book-appointment-right">
+                        <iframe 
+                          width="100%" 
+                          height="315" 
+                          src="https://www.youtube.com/embed/OjVoPJ07Wsc" 
+                          title="Naturals Salon Tour"
+                          frameborder="0" 
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                          allowfullscreen>
+                        </iframe>
+                        <iframe 
+                          width="100%" 
+                          height="315" 
+                          src="https://www.youtube.com/embed/r0_Yp3EDqRE" 
+                          title="Naturals Salon Tour"
+                          frameborder="0" 
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                          allowfullscreen>
+                        </iframe>
+                      </div>
+                      
+                  </div>               
+              </div>
+        </section>
+
+        <!-- Popup Message -->
+
+        <div id="popup-message" class="popup-message"></div>
+
+      </main>
+      <script>
+        function showPopup(message, type = 'error', duration = 3000) {
+          const popup = document.getElementById('popup-message');
+          popup.textContent = message;
+      
+          popup.className = 'popup-message';
+          popup.classList.add(type === 'success' ? 'popup-success' : 'popup-error');
+      
+          popup.style.display = 'block';
+      
+          setTimeout(() => {
+            popup.style.display = 'none';
+          }, duration);
+        }
+      
+        document.getElementById('form').addEventListener('submit', function (e) {
+          e.preventDefault();
+      
+          const form = this;
+          const name = document.getElementById('name').value.trim();
+          const phone = document.getElementById('phone').value.trim();
+          const email = document.getElementById('email').value.trim();
+          const service = document.getElementById('service').value;
+          const stylist = document.getElementById('stylist').value;
+          const date = document.getElementById('date').value;
+          const time = document.getElementById('time').value;
+          const message = document.getElementById('message').value.trim();
+          const terms = document.querySelector('input[name="terms"]').checked;
+          const country_code = document.querySelector('select[name="country_code"]').value || '+91';
+      
+          // Validation
+          if (name === '') {
+            showPopup('Please enter your name.');
+            return;
+          }
+      
+          if (phone.length !== 10) {
+            showPopup('Phone number must be exactly 10 digits.');
+            return;
+          }
+      
+          if (!/^[6-9]/.test(phone)) {
+            showPopup('Phone number must start with 6, 7, 8, or 9.');
+            return;
+          }
+      
+          if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            showPopup('Please enter a valid email address.');
+            return;
+          }
+      
+          if (service === '') {
+            showPopup('Please select a service.');
+            return;
+          }
+      
+          const today = new Date().toISOString().split('T')[0];
+          if (date < today) {
+            showPopup('Appointment date cannot be in the past.');
+            return;
+          }
+      
+          if (time === '') {
+            showPopup('Please select a time.');
+            return;
+          }
+      
+          if (!terms) {
+            showPopup('You must accept the terms and conditions.');
+            return;
+          }
+      
+          // Prepare data to send
+          const formData = new FormData();
+          formData.append('name', name);
+          formData.append('country_code', country_code);
+          formData.append('phone', phone);
+          formData.append('email', email);
+          formData.append('service', service);
+          formData.append('stylist', stylist);
+          formData.append('date', date);
+          formData.append('time', time);
+          formData.append('message', message);
+          formData.append('terms', terms);
+      
+          // Send with fetch
+          fetch('../php/booking.php', {
+            method: 'POST',
+            body: formData
+          })
+            .then(response => response.json())
+            .then(data => {
+              if (data.status === 'success') {
+                showPopup(data.message, 'success');
+                form.reset();
+                setTimeout(() => {
+                  window.location.href = 'index.html';
+                }, 2000);
+              } else {
+                showPopup(data.message);
+              }
+            })
+            .catch(() => {
+              showPopup('An error occurred while submitting the form.');
+            });
+        });
+      </script>          
+</body>
+</html>

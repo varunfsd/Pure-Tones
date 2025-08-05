@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/register.css" />
+  <script src="https://unpkg.com/lottie-web@5.12.0/build/player/lottie.min.js"></script>
+  <title>Login - Naturals Salon</title>
+</head>
+<body>
+  <header>
+    <nav class="navigation-bar">
+      <div class="navigation-left">
+        <img src="../images/ChatGPT Image May 16, 2025, 10_51_37 AM.png" alt="Naturals Logo" />
+      </div>
+      <div class="navigation-bar-right">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ourservices.html">Our Services</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="register-section">
+      <div class="register-container">
+        <div class="register-left-container">
+          <form class="register-form" id="login-form" action="../php/login.php" method="post">
+            <div class="form-top">
+              <h2 class="red">Welcome Back</h2>
+              <p>Login to continue your journey with Naturals Salon.</p>
+            </div>
+
+            <label for="email">Email <span class="required">*</span></label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="password">Password <span class="required">*</span></label>
+            <input type="password" id="password" name="password" required />
+
+            <label class="checkbox-label">
+              <input type="checkbox" name="remember" />
+              <span>Remember me</span>
+            </label>
+
+            <button type="submit">Login</button>
+          </form>
+        </div>
+        <div class="register-container-right">
+          <div class="lottie-wrapper">
+            <div id="lottie-login" class="lottie-player"></div>
+            <p class="caption">Step Into Your Natural Glow</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="popup-message" class="popup-message"></div>
+  </main>
+
+  <script>
+   lottie.loadAnimation({
+    container: document.getElementById('lottie-login'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'https://assets1.lottiefiles.com/packages/lf20_tfb3estd.json'
+  });
+
+  function showPopup(message, type = 'error', duration = 3000) {
+    const popup = document.getElementById('popup-message');
+    popup.textContent = message;
+
+    popup.className = 'popup-message';
+    popup.classList.add(type === 'success' ? 'popup-success' : 'popup-error');
+
+    popup.style.display = 'block';
+
+    setTimeout(() => {
+      popup.style.display = 'none';
+    }, duration);
+  }
+
+  document.getElementById('login-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      showPopup('Please enter a valid email address.');
+      return;
+    }
+
+    if (password === '') {
+      showPopup('Please enter your password.');
+      return;
+    }
+
+    const formData = new FormData(this);
+
+    fetch('../php/login.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.status === 'success') {
+        sessionStorage.setItem('userEmail', email);
+        showPopup(data.message, 'success');
+
+        setTimeout(() => {
+          window.location.href = 'getbookings.html'; // or dashboard.html if you have
+        }, 2000);
+      } else {
+        showPopup(data.message, 'error');
+      }
+    })
+    .catch(err => {
+      console.error('Login error:', err);
+      showPopup('An error occurred. Please try again.', 'error');
+    });
+  });
+  </script>
+</body>
+</html>

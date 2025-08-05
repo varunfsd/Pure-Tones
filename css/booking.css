@@ -1,0 +1,205 @@
+/* Reset and base styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(to left, #4a1d50, #793087, #a044c3);
+  }
+  
+  /* Appointment Section */
+
+  .appointment-section{
+    background-color: #86519f;
+    border-radius: 20px;
+    margin:20px;
+}
+.booking-appointment-container{
+    display: flex;
+    padding:40px 60px;
+    gap:30px;
+}
+.booking-appointment-left{
+    width:50%;
+    max-width: 600px;
+    background-color: #ffffffdd;
+    border-radius: 12px;
+    padding:30px;
+}
+.book-appointment-right{
+    width:50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem
+}
+.book-appointment-right h3{
+    color:white;
+    font-size: 28px;
+    font-weight: 700;
+    font-family:'nunito';
+    text-align: center;
+}
+  .appointment-section h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  /* Form Styling */
+
+   form {
+    display: flex;
+    flex-direction: column;
+  } 
+  
+  .contact-form {
+    border: 1px solid rgba(68, 68, 68, 1.0);
+    padding: 10px;
+  }
+  
+  .contact-form .form-top {
+    padding: 10px 18px;
+    border-bottom: 1px solid black;
+  }
+  
+  .contact-form h2 {
+    font-size: 26px;
+    font-weight: 400;
+    font-family: 'Nunito';
+    margin-bottom: 10px;
+    color: black;
+    text-align: left;
+  }
+  
+  .contact-form p {
+    color: #555;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  /* Labels & Inputs */
+
+  label {
+    margin-top: 18px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: black;
+    font-family: 'Nunito';
+    font-size: 15px;
+  }
+  
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+    margin-bottom: 5px;
+  }
+  
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #a044c3;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  /* Phone Group */
+
+  .phone-group {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .phone-group select {
+    width: 90px;
+    padding: 10px;
+  }
+  
+  /* Checkbox Label */
+
+  .checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+  .checkbox-label input[type="checkbox"] {
+    margin-top: 4px;
+    margin-right: 10px;
+    width:fit-content;
+  }
+  
+  .checkbox-label span {
+    font-size: 13px;
+    font-weight: 400;
+    color: rgb(68, 68, 68);
+  }
+  
+  /* Button */
+
+  button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background: #6a1b9a;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background: #4a148c;
+  }
+  
+/* Popup */
+
+  .popup-message {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    z-index: 1000;
+    font-weight: bold;
+    color: #fff;
+    transition: opacity 0.3s ease;
+    font-size: 12px;
+  }
+  
+  .popup-success {
+    background-color: #4CAF50;
+    border: 1px solid #3e8e41;
+  }
+  
+  .popup-error {
+    background-color: #f44336;
+    border: 1px solid #d32f2f;
+  }
+  
+  /* Responsive */
+
+  @media (max-width: 600px) {
+    .appointment-section {
+      padding: 25px;
+    }
+  
+    .appointment-section h2 {
+      font-size: 24px;
+    }
+  }

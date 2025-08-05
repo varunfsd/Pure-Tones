@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/contact.css">
+    <title>Document</title>
+</head>
+<body>
+  <!-- Header -->
+    <header>
+      <!-- Navigation -->
+        <nav class="navigation-bar">
+            <div class="navigation-left">
+              <img src="../images/ChatGPT Image May 16, 2025, 10_51_37 AM.png" alt="Naturals Logo" />
+            </div>
+            <div class="navigation-bar-right">
+              <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ourservices.html">Our Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+            </div>
+          </nav>
+    </header>
+    <main>
+
+      <!-- Contact Section -->
+
+        <section class="contact-section">
+          <div class="contact-main-container">
+            <div class="contact-left-container">
+              <form class="contact-form" id="form">
+                <div class="form-top">
+                  <h2 class="red">We’d Love To Hear From You</h2>
+                  <p>Contact us with any Naturals Salon across India by filling out the form below.</p>
+                </div>
+              
+                <label for="name">Name<span class="required">*</span></label>
+                <input type="text" id="name" name="name" required>
+              
+                <label for="phone">Phone Number <span class="required">*</span></label>
+                <div class="phone-group">
+                  <select name="country_code">
+                    <option selected>🇮🇳 +91</option>
+                  </select>
+                  <input type="tel" id="phone" name="phone" required>
+                </div>
+              
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+              
+                <label for="pincode">Pin code <span class="required">*</span></label>
+                <input type="number" id="pincode" name="pincode" required>
+              
+                <label for="enquiry">Select your enquiry type <span class="required">*</span></label>
+                <select id="enquiry" name="enquiry" required>
+                  <option value="">-Select-</option>
+                  <option value="Franchise">Franchise</option>
+                  <option value="Services">Services</option>
+                  <option value="Feedback">Feedback</option>
+                </select>
+              
+                <label for="message">Message <span class="required">*</span></label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+              
+                <label class="checkbox-label">
+                  <input type="checkbox" name="terms" required checked>
+                  <span>
+                    I grant authorization to Groom India Salon & Spa Pvt. Ltd. to contact me concerning the purpose of my inquiry.
+                    Through the submission of this form, I confirm that I have read and accepted all the terms and conditions outlined.
+                    I also provide consent to receive marketing campaigns from the brand via SMS, WhatsApp, and RCS.
+                  </span>
+                </label>
+              
+                <button type="submit">Submit</button>
+              </form>
+              
+            </div>
+            <div class="contact-right-container">
+              <h2>Write To Us</h2>
+              <p>
+                <strong>Franchise Enqiury:</strong>
+                <a href="">franchise@puretones.in</a>
+              </p>
+              <p>
+                <strong>Feedback & Suggestaions:</strong>
+                <a href="">care@puretones.in</a>
+              </p>
+              <p>
+                <strong>careeres & Jobs</strong>
+                <a href="">jobs@naturals.in</a>
+              </p>
+              <p>
+                <strong>WhatsApp Us</strong>
+                <a href="">7569464632</a>
+              </p>
+            </div>
+          </div>
+        </section>
+    </main>
+</body>
+</html>
